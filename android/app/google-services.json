@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1030666251928",
+    "project_id": "yoyodating-6fa37",
+    "storage_bucket": "yoyodating-6fa37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030666251928:android:32a7d937634243e64baaed",
+        "android_client_info": {
+          "package_name": "yoyo.dating.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030666251928-rpe9039j43gpp6jtrueh98ivds6u2g64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "yoyo.dating.app",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1030666251928-frunv49lnf8iiu78tmfmiiav4ua25rer.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkg6ERjmrD2x_N1eTq-GGGQa1NFxd8xKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030666251928-frunv49lnf8iiu78tmfmiiav4ua25rer.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1030666251928-1javfomr8osovrhgr3fj7crc28se2nfq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "yoyo.dating.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
