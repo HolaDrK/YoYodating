@@ -34,6 +34,9 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
   // State field(s) for yourLocation widget.
   TextEditingController? yourLocationController;
   String? Function(BuildContext, String?)? yourLocationControllerValidator;
+  // State field(s) for yourNumber widget.
+  TextEditingController? yourNumberController;
+  String? Function(BuildContext, String?)? yourNumberControllerValidator;
   // State field(s) for yourEverythingelse widget.
   TextEditingController? yourEverythingelseController;
   String? Function(BuildContext, String?)?
@@ -49,6 +52,7 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
     yourGenderController?.dispose();
     desiredGenderController?.dispose();
     yourLocationController?.dispose();
+    yourNumberController?.dispose();
     yourEverythingelseController?.dispose();
   }
 

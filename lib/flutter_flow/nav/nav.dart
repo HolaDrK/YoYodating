@@ -173,6 +173,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MatchProfileFS',
           path: '/matchProfileFS',
           builder: (context, params) => MatchProfileFSWidget(),
+        ),
+        FFRoute(
+          name: 'connectionConfirmed',
+          path: '/connectionConfirmed',
+          builder: (context, params) => ConnectionConfirmedWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

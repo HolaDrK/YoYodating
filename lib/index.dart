@@ -17,3 +17,5 @@ export '/welcome_home/welcome_home_widget.dart' show WelcomeHomeWidget;
 export '/daily_matches3/daily_matches3_widget.dart' show DailyMatches3Widget;
 export '/match_profile_f_s/match_profile_f_s_widget.dart'
     show MatchProfileFSWidget;
+export '/connection_confirmed/connection_confirmed_widget.dart'
+    show ConnectionConfirmedWidget;

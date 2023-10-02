@@ -34,6 +34,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     _model.yourGenderController ??= TextEditingController();
     _model.desiredGenderController ??= TextEditingController();
     _model.yourLocationController ??= TextEditingController();
+    _model.yourNumberController ??= TextEditingController();
     _model.yourEverythingelseController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -415,6 +416,59 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
+              controller: _model.yourNumberController,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  '3rebwnc0' /* YourNumber */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: FFLocalizations.of(context).getText(
+                  '02ttd3y1' /* what is my phone number? */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+              ),
+              style: FlutterFlowTheme.of(context).titleSmall,
+              keyboardType: TextInputType.emailAddress,
+              validator:
+                  _model.yourNumberControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            child: TextFormField(
               controller: _model.yourEverythingelseController,
               obscureText: false,
               decoration: InputDecoration(
@@ -466,7 +520,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 20.0),
             child: FFButtonWidget(
               onPressed: () async {
                 await currentUserReference!.update(createUsersRecordData(
@@ -491,7 +545,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               ),
               options: FFButtonOptions(
                 width: 230.0,
-                height: 60.0,
+                height: 44.0,
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primaryText,

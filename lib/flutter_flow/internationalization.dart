@@ -282,6 +282,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
       'ja': '',
     },
+    '3rebwnc0': {
+      'en': 'YourNumber',
+      'es': '',
+      'ja': '',
+    },
+    '02ttd3y1': {
+      'en': 'what is my phone number?',
+      'es': '',
+      'ja': '',
+    },
     '7wiq0wxp': {
       'en': 'Your EverythingElseEnteredSoon',
       'es': '',
@@ -453,38 +463,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // WelcomeHome
   {
-    '676vjcjy': {
+    '5o6n9wwo': {
       'en': 'ZenDaily Reward Screen',
       'es': '',
       'ja': '',
     },
-    'ak1zn145': {
+    'n7d5rr8m': {
       'en': 'Humble Tea',
       'es': '',
       'ja': '',
     },
-    'bhbwewlg': {
+    'wpafukmd': {
       'en': '10:00am',
       'es': '',
       'ja': '',
     },
-    'elwf9bcy': {
+    'owyj50q0': {
       'en':
           'Today is a good day to finish the basis of this app. Everyday your skill and knowledge base grows. The Pages that follow this do not matter yet, the concept is what is key. This page illustrates the daily reward located below with rotating calming picture above and a tracker below where insitity and other details are listed below. ',
       'es': '',
       'ja': '',
     },
-    'e0bf2jpi': {
+    'ng4twn32': {
       'en': 'Tea For You',
       'es': '',
       'ja': '',
     },
-    'f82wa7p3': {
+    'w2d54o4g': {
       'en': 'Days In A Row Tea Claimed For Current Month With Streak',
       'es': '',
       'ja': '',
     },
-    'ympuwrso': {
+    '7wmi1hsn': {
       'en': 'Continue',
       'es': '',
       'ja': '',
@@ -492,48 +502,48 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // DailyMatches3
   {
-    '6rib9gnk': {
+    'rqf74qfj': {
       'en': 'Daily Three',
       'es': '',
       'ja': '',
     },
-    'nffrcts8': {
+    'alckrhci': {
       'en': 'Y',
       'es': '',
       'ja': '',
     },
-    't1tt3k32': {
+    '2edkkpal': {
       'en': 'E',
       'es': '',
       'ja': '',
     },
-    'lj7lrpia': {
+    'dm9teqbq': {
       'en': 'S',
       'es': '',
       'ja': '',
     },
-    'furl1blr': {
+    'gfa23051': {
       'en': 'Choose Wisely ',
       'es': '',
       'ja': '',
     },
-    '6faxykds': {
+    '9boaxqop': {
       'en': '10:00am',
       'es': '',
       'ja': '',
     },
-    'fn4262ue': {
+    'obgtoqr5': {
       'en':
           'Trying to figure out the flow for the best of 3 matches but this is  a beginning that even if it goes nowhere or moves to another service the concept is here the path forward is possible if not yet clear.',
       'es': '',
       'ja': '',
     },
-    'iynqnlx9': {
+    'n72m08la': {
       'en': 'Matches delete daily',
       'es': '',
       'ja': '',
     },
-    '2akarrg7': {
+    '1jsdns5t': {
       'en': 'Chat With Matchs Met',
       'es': '',
       'ja': '',
@@ -541,23 +551,51 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MatchProfileFS
   {
-    '6omnwprd': {
-      'en': 'A Rose By Any Other Name ',
+    'naxqri5h': {
+      'en': '     A Rose By Any Other Name ',
       'es': '',
       'ja': '',
     },
-    '6plc2t0e': {
+    'a7i2y9hg': {
       'en': 'Not For Me                For Me Choose ',
       'es': '',
       'ja': '',
     },
-    'z0cssh6a': {
+    'vbq2m09a': {
       'en': 'Y',
       'es': '',
       'ja': '',
     },
-    '0mnmakh8': {
+    'zqji8gh1': {
       'en': 'Y',
+      'es': '',
+      'ja': '',
+    },
+  },
+  // connectionConfirmed
+  {
+    'krce2ple': {
+      'en': '      Connection Is Potential ',
+      'es': '',
+      'ja': '',
+    },
+    'vtvm6wi5': {
+      'en': 'Both Parties Agree To This Paring',
+      'es': '',
+      'ja': '',
+    },
+    'r36gs0d7': {
+      'en': '10:00am',
+      'es': '',
+      'ja': '',
+    },
+    'ua8qtt0x': {
+      'en': 'May Suggested Activity Be In Your Favor',
+      'es': '',
+      'ja': '',
+    },
+    '9p5fnb26': {
+      'en': 'Start Chatting',
       'es': '',
       'ja': '',
     },
