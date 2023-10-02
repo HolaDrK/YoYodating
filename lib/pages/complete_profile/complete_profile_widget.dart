@@ -29,12 +29,12 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     super.initState();
     _model = createModel(context, () => CompleteProfileModel());
 
-    _model.yourAgeController ??= TextEditingController();
+    _model.ageController ??= TextEditingController();
     _model.displayNameController ??= TextEditingController();
-    _model.yourGenderController ??= TextEditingController();
+    _model.genderController ??= TextEditingController();
     _model.desiredGenderController ??= TextEditingController();
-    _model.yourLocationController ??= TextEditingController();
-    _model.yourNumberController ??= TextEditingController();
+    _model.locationController ??= TextEditingController();
+    _model.numberController ??= TextEditingController();
     _model.yourEverythingelseController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -131,6 +131,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                       return;
                     }
                   }
+
+                  await currentUserReference!.update(createUsersRecordData());
                 },
                 child: Container(
                   width: 80.0,
@@ -152,7 +154,22 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
-              controller: _model.yourAgeController,
+              controller: _model.ageController,
+              onFieldSubmitted: (_) async {
+                await currentUserReference!.update(createUsersRecordData(
+                  email: '',
+                  displayName: '',
+                  photoUrl: '',
+                  uid: '',
+                  phoneNumber: '',
+                  userRole: '',
+                  password: '',
+                  isGuest: false,
+                  age: '',
+                  gender: '',
+                  desiredGender: '',
+                ));
+              },
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
@@ -198,7 +215,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               ),
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
-              validator: _model.yourAgeControllerValidator.asValidator(context),
+              validator: _model.ageControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -257,7 +274,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
-              controller: _model.yourGenderController,
+              controller: _model.genderController,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
@@ -303,8 +320,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               ),
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
-              validator:
-                  _model.yourGenderControllerValidator.asValidator(context),
+              validator: _model.genderControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -363,7 +379,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
-              controller: _model.yourLocationController,
+              controller: _model.locationController,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
@@ -410,13 +426,13 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
               validator:
-                  _model.yourLocationControllerValidator.asValidator(context),
+                  _model.locationControllerValidator.asValidator(context),
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
-              controller: _model.yourNumberController,
+              controller: _model.numberController,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
@@ -462,8 +478,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               ),
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
-              validator:
-                  _model.yourNumberControllerValidator.asValidator(context),
+              validator: _model.numberControllerValidator.asValidator(context),
             ),
           ),
           Padding(
@@ -526,7 +541,6 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 await currentUserReference!.update(createUsersRecordData(
                   photoUrl: _model.uploadedFileUrl,
                   displayName: _model.displayNameController.text,
-                  userRole: _model.yourGenderController.text,
                   createdTime: getCurrentTimestamp,
                   email: '',
                   uid: '',

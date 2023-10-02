@@ -32,3 +32,12 @@ List<String> newCustomFunction(
 
   return finalArray;
 }
+
+List<DocumentReference> createChatUserlist(
+  DocumentReference userRef,
+  DocumentReference userRef2,
+) {
+  // combine chat user lists
+  List<DocumentReference> chatUserList = [userRef, userRef2];
+  return chatUserList;
+}

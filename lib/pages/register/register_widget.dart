@@ -68,7 +68,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                   child: Image.asset(
-                    'assets/images/logoGeekMessaging.png',
+                    'assets/images/OIG_(12).jpeg',
                     width: 160.0,
                     height: 140.0,
                     fit: BoxFit.cover,
@@ -351,6 +351,20 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     if (user == null) {
                       return;
                     }
+
+                    await currentUserReference!.update(createUsersRecordData(
+                      email: '',
+                      displayName: '',
+                      photoUrl: '',
+                      uid: '',
+                      phoneNumber: '',
+                      userRole: '',
+                      password: '',
+                      isGuest: false,
+                      age: '',
+                      gender: '',
+                      desiredGender: '',
+                    ));
 
                     context.goNamedAuth('completeProfile', context.mounted);
                   },

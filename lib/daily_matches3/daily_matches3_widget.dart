@@ -58,7 +58,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'gbqx4oqt' /* Daily Three */,
+            'ujrqw8ka' /* Daily Three */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
@@ -154,7 +154,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'lyhrwl75' /* Y */,
+                                'd1wq1lt3' /* Y */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -219,7 +219,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'rff1jy30' /* E */,
+                                'fnqiy9ok' /* E */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -284,7 +284,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'yoqiw5b1' /* S */,
+                                'clq2xsfy' /* S */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -313,7 +313,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'oc1u612m' /* Choose Wisely  */,
+                      '0so1dzz9' /* Choose Wisely  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
@@ -321,7 +321,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'syitj9fr' /* 10:00am */,
+                        '1q0sbop9' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -331,7 +331,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'pg3u49ux' /* Trying to figure out the flow ... */,
+                      '4nxumg04' /* Trying to figure out the flow ... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -344,7 +344,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '2z8er6hk' /* Matches delete daily */,
+                        'mblycjur' /* Matches delete daily */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -361,7 +361,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     context.pushNamed('chatMain');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'had50853' /* Chat With Matchs Met */,
+                    '4uu7pp9i' /* Chat With Matchs Met */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,

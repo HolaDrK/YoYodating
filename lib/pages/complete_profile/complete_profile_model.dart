@@ -19,24 +19,24 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  // State field(s) for yourAge widget.
-  TextEditingController? yourAgeController;
-  String? Function(BuildContext, String?)? yourAgeControllerValidator;
-  // State field(s) for displayName widget.
+  // State field(s) for age widget.
+  TextEditingController? ageController;
+  String? Function(BuildContext, String?)? ageControllerValidator;
+  // State field(s) for display_name widget.
   TextEditingController? displayNameController;
   String? Function(BuildContext, String?)? displayNameControllerValidator;
-  // State field(s) for yourGender widget.
-  TextEditingController? yourGenderController;
-  String? Function(BuildContext, String?)? yourGenderControllerValidator;
+  // State field(s) for gender widget.
+  TextEditingController? genderController;
+  String? Function(BuildContext, String?)? genderControllerValidator;
   // State field(s) for desiredGender widget.
   TextEditingController? desiredGenderController;
   String? Function(BuildContext, String?)? desiredGenderControllerValidator;
-  // State field(s) for yourLocation widget.
-  TextEditingController? yourLocationController;
-  String? Function(BuildContext, String?)? yourLocationControllerValidator;
-  // State field(s) for yourNumber widget.
-  TextEditingController? yourNumberController;
-  String? Function(BuildContext, String?)? yourNumberControllerValidator;
+  // State field(s) for location widget.
+  TextEditingController? locationController;
+  String? Function(BuildContext, String?)? locationControllerValidator;
+  // State field(s) for number widget.
+  TextEditingController? numberController;
+  String? Function(BuildContext, String?)? numberControllerValidator;
   // State field(s) for yourEverythingelse widget.
   TextEditingController? yourEverythingelseController;
   String? Function(BuildContext, String?)?
@@ -47,12 +47,12 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
   void initState(BuildContext context) {}
 
   void dispose() {
-    yourAgeController?.dispose();
+    ageController?.dispose();
     displayNameController?.dispose();
-    yourGenderController?.dispose();
+    genderController?.dispose();
     desiredGenderController?.dispose();
-    yourLocationController?.dispose();
-    yourNumberController?.dispose();
+    locationController?.dispose();
+    numberController?.dispose();
     yourEverythingelseController?.dispose();
   }
 

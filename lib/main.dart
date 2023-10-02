@@ -139,9 +139,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'chatMain': ChatMainWidget(),
       'userAccountSettings': UserAccountSettingsWidget(),
       'WelcomeHome': WelcomeHomeWidget(),
+      'chatMain': ChatMainWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -162,18 +162,6 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.chat_bubble_outline,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.chat_bubble_rounded,
-              size: 24.0,
-            ),
-            label: '',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.account_circle_outlined,
               size: 24.0,
             ),
@@ -187,6 +175,18 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
+              size: 24.0,
+            ),
+            label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat_bubble_outline,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.chat_bubble_rounded,
               size: 24.0,
             ),
             label: '',

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -121,7 +122,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
                           child: Image.network(
-                            'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8eW9nYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+                            matchProfileFSUsersRecord!.photoUrl,
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 439.0,
                             fit: BoxFit.cover,
@@ -129,9 +130,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                         ),
                       ),
                       Text(
-                        FFLocalizations.of(context).getText(
-                          'z482ssl3' /*      A Rose By Any Other Name  */,
-                        ),
+                        matchProfileFSUsersRecord!.displayName,
                         style: FlutterFlowTheme.of(context).headlineMedium,
                       ),
                       Divider(
@@ -151,7 +150,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                       ),
                       Text(
                         FFLocalizations.of(context).getText(
-                          'ux7itlub' /*  Not For Me              For M... */,
+                          'tls39zxs' /*  Not For Me              For M... */,
                         ),
                         style: FlutterFlowTheme.of(context).headlineMedium,
                       ),
@@ -164,11 +163,29 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   19.0, 20.0, 0.0, 24.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('ButtonPrimary pressed ...');
+                                onPressed: () async {
+                                  await currentUserReference!.update({
+                                    ...mapToFirestore(
+                                      {
+                                        'rejected': FieldValue.arrayUnion(
+                                            [matchProfileFSUsersRecord?.uid]),
+                                      },
+                                    ),
+                                  });
+
+                                  context.pushNamed(
+                                    'MatchProfileFS',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'fzl25p3k' /* Y */,
+                                  '9lareho0' /* Y */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 60.0,
@@ -217,11 +234,67 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 24.0, 24.0),
                               child: FFButtonWidget(
-                                onPressed: () {
-                                  print('ButtonPrimary pressed ...');
+                                onPressed: () async {
+                                  await currentUserReference!.update({
+                                    ...mapToFirestore(
+                                      {
+                                        'match': FieldValue.arrayUnion(
+                                            [matchProfileFSUsersRecord?.uid]),
+                                      },
+                                    ),
+                                  });
+                                  if (matchProfileFSUsersRecord!.match
+                                      .contains(currentUserUid)) {
+                                    await ChatsRecord.collection.doc().set({
+                                      ...createChatsRecordData(
+                                        userA: matchProfileFSUsersRecord
+                                            ?.reference,
+                                        userB: currentUserReference,
+                                        lastMessage: '\"\"',
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'users': functions.createChatUserlist(
+                                              matchProfileFSUsersRecord!
+                                                  .reference,
+                                              currentUserReference!),
+                                          'last_message_time':
+                                              FieldValue.serverTimestamp(),
+                                        },
+                                      ),
+                                    });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Positive Potential Aways :)',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 3000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
+                                    await Future.delayed(
+                                        const Duration(milliseconds: 3000));
+                                  }
+
+                                  context.pushNamed(
+                                    'WelcomeHome',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '684kfq2z' /* Y */,
+                                  'c8ozzxwy' /* Y */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 60.0,
