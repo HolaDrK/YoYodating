@@ -58,7 +58,7 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'h3ipx7dv' /* ZenDaily Reward Screen */,
+            '676vjcjy' /* ZenDaily Reward Screen */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
@@ -91,7 +91,7 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'ku4i6dpt' /* Humble Tea */,
+                      'ak1zn145' /* Humble Tea */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
@@ -99,7 +99,7 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'rex1eyz7' /* 10:00am */,
+                        'bhbwewlg' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -109,14 +109,9 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'n9y7jeh9' /* Today is a good day to finish ... */,
+                      'elwf9bcy' /* Today is a good day to finish ... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
-                  ),
-                  Divider(
-                    height: 32.0,
-                    thickness: 1.0,
-                    color: FlutterFlowTheme.of(context).alternate,
                   ),
                 ],
               ),
@@ -170,7 +165,7 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'oywr1smq' /* Tea For You */,
+                                  'e0bf2jpi' /* Tea For You */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -196,7 +191,7 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'gvo5i28u' /* Days In A Row Tea Claimed For ... */,
+                  'f82wa7p3' /* Days In A Row Tea Claimed For ... */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium,
               ),
@@ -210,11 +205,11 @@ class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
                     context.pushNamed('DailyMatches3');
                   },
                   text: FFLocalizations.of(context).getText(
-                    '4uc9k7jw' /* Continue */,
+                    'ympuwrso' /* Continue */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
-                    height: 60.0,
+                    height: 48.0,
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),

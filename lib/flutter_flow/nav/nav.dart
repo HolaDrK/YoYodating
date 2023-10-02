@@ -160,7 +160,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'WelcomeHome',
           path: '/DailyTea',
-          builder: (context, params) => WelcomeHomeWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'WelcomeHome')
+              : WelcomeHomeWidget(),
         ),
         FFRoute(
           name: 'DailyMatches3',
@@ -352,12 +354,9 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: Colors.transparent,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/splash@2x.png',
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      fit: BoxFit.fitWidth,
-                    ),
+                  child: Image.asset(
+                    'assets/images/OIG_(12).jpeg',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;
