@@ -8,7 +8,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 const kThemeModeKey = '__theme_mode__';
 SharedPreferences? _prefs;
 
+enum DeviceSize {
+  mobile,
+  tablet,
+  desktop,
+}
+
 abstract class FlutterFlowTheme {
+  static DeviceSize deviceSize = DeviceSize.mobile;
+
   static Future initialize() async =>
       _prefs = await SharedPreferences.getInstance();
   static ThemeMode get themeMode {
@@ -25,6 +33,7 @@ abstract class FlutterFlowTheme {
       : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
 
   static FlutterFlowTheme of(BuildContext context) {
+    deviceSize = getDeviceSize(context);
     return Theme.of(context).brightness == Brightness.dark
         ? DarkModeTheme()
         : LightModeTheme();
@@ -120,7 +129,22 @@ abstract class FlutterFlowTheme {
   String get bodySmallFamily => typography.bodySmallFamily;
   TextStyle get bodySmall => typography.bodySmall;
 
-  Typography get typography => ThemeTypography(this);
+  Typography get typography => {
+        DeviceSize.mobile: MobileTypography(this),
+        DeviceSize.tablet: TabletTypography(this),
+        DeviceSize.desktop: DesktopTypography(this),
+      }[deviceSize]!;
+}
+
+DeviceSize getDeviceSize(BuildContext context) {
+  final width = MediaQuery.sizeOf(context).width;
+  if (width < 479) {
+    return DeviceSize.mobile;
+  } else if (width < 991) {
+    return DeviceSize.tablet;
+  } else {
+    return DeviceSize.desktop;
+  }
 }
 
 class LightModeTheme extends FlutterFlowTheme {
@@ -131,22 +155,22 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFFEE8B60);
-  late Color tertiary = const Color(0xFFFFFFFF);
-  late Color alternate = const Color(0xFF39D2C0);
-  late Color primaryText = const Color(0xFF090F13);
-  late Color secondaryText = const Color(0xFF95A1AC);
+  late Color primary = const Color(0xFF4B986C);
+  late Color secondary = const Color(0xFF928163);
+  late Color tertiary = const Color(0xFF6D604A);
+  late Color alternate = const Color(0xFFC8D7E4);
+  late Color primaryText = const Color(0xFF0B191E);
+  late Color secondaryText = const Color(0xFF384E58);
   late Color primaryBackground = const Color(0xFFF1F4F8);
   late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0xFF616161);
-  late Color accent2 = const Color(0xFF757575);
-  late Color accent3 = const Color(0xFFE0E0E0);
-  late Color accent4 = const Color(0xFFEEEEEE);
-  late Color success = const Color(0xFF04A24C);
-  late Color warning = const Color(0xFFFCDC0C);
-  late Color error = const Color(0xFFE21C3D);
-  late Color info = const Color(0xFF1C4494);
+  late Color accent1 = const Color(0x4D4B986C);
+  late Color accent2 = const Color(0x4D928163);
+  late Color accent3 = const Color(0x4C6D604A);
+  late Color accent4 = const Color(0xCDFFFFFF);
+  late Color success = const Color(0xFF336A4A);
+  late Color warning = const Color(0xFFF3C344);
+  late Color error = const Color(0xFFC4454D);
+  late Color info = const Color(0xFFFFFFFF);
 
   late Color grayDark = Color(0xFF616E78);
   late Color dark900 = Color(0xFFFFFFFF);
@@ -188,114 +212,338 @@ abstract class Typography {
   TextStyle get bodySmall;
 }
 
-class ThemeTypography extends Typography {
-  ThemeTypography(this.theme);
+class MobileTypography extends Typography {
+  MobileTypography(this.theme);
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
+  String get displayLargeFamily => 'Urbanist';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 57.0,
+        fontSize: 52.0,
       );
-  String get displayMediumFamily => 'Poppins';
+  String get displayMediumFamily => 'Urbanist';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Poppins',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 45.0,
+        fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Lexend Deca';
+  String get displaySmallFamily => 'Urbanist';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 36.0,
+      );
+  String get headlineLargeFamily => 'Urbanist';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 36.0,
+      );
+  String get headlineMediumFamily => 'Urbanist';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get headlineLargeFamily => 'Poppins';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Poppins',
+  String get headlineSmallFamily => 'Urbanist';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 32.0,
+        fontSize: 24.0,
       );
-  String get headlineMediumFamily => 'Lexend Deca';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Lexend Deca',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w500,
-        fontSize: 22.0,
-      );
-  String get headlineSmallFamily => 'Lexend Deca';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Lexend Deca',
-        color: theme.tertiaryOld,
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0,
-      );
-  String get titleLargeFamily => 'Poppins';
+  String get titleLargeFamily => 'Urbanist';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Poppins',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Lexend Deca';
+  String get titleMediumFamily => 'Plus Jakarta Sans';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Lexend Deca',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Lexend Deca';
+  String get titleSmallFamily => 'Plus Jakarta Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Lexend Deca',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get labelLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Poppins';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Poppins',
+  String get labelMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get labelSmallFamily => 'Plus Jakarta Sans';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+      );
+  String get bodyLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get bodyMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Poppins';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Poppins',
+  String get bodySmallFamily => 'Plus Jakarta Sans';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get labelSmallFamily => 'Poppins';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Poppins',
+}
+
+class TabletTypography extends Typography {
+  TabletTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Urbanist';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 52.0,
+      );
+  String get displayMediumFamily => 'Urbanist';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 44.0,
+      );
+  String get displaySmallFamily => 'Urbanist';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 36.0,
+      );
+  String get headlineLargeFamily => 'Urbanist';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 36.0,
+      );
+  String get headlineMediumFamily => 'Urbanist';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+      );
+  String get headlineSmallFamily => 'Urbanist';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 24.0,
+      );
+  String get titleLargeFamily => 'Urbanist';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 11.0,
+        fontSize: 22.0,
       );
-  String get bodyLargeFamily => 'Poppins';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Poppins',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+  String get titleMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get titleSmallFamily => 'Plus Jakarta Sans';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get labelLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Lexend Deca';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Lexend Deca',
+  String get labelMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Lexend Deca';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Lexend Deca',
+  String get labelSmallFamily => 'Plus Jakarta Sans';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
         color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+      );
+  String get bodyLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get bodyMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get bodySmallFamily => 'Plus Jakarta Sans';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+      );
+}
+
+class DesktopTypography extends Typography {
+  DesktopTypography(this.theme);
+
+  final FlutterFlowTheme theme;
+
+  String get displayLargeFamily => 'Urbanist';
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
         fontWeight: FontWeight.normal,
+        fontSize: 52.0,
+      );
+  String get displayMediumFamily => 'Urbanist';
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 44.0,
+      );
+  String get displaySmallFamily => 'Urbanist';
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 36.0,
+      );
+  String get headlineLargeFamily => 'Urbanist';
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 36.0,
+      );
+  String get headlineMediumFamily => 'Urbanist';
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+      );
+  String get headlineSmallFamily => 'Urbanist';
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
+        fontSize: 24.0,
+      );
+  String get titleLargeFamily => 'Urbanist';
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Urbanist',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 22.0,
+      );
+  String get titleMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get titleSmallFamily => 'Plus Jakarta Sans';
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.info,
+        fontWeight: FontWeight.w600,
+        fontSize: 18.0,
+      );
+  String get labelLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get labelMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get labelSmallFamily => 'Plus Jakarta Sans';
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.secondaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 12.0,
+      );
+  String get bodyLargeFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      );
+  String get bodyMediumFamily => 'Plus Jakarta Sans';
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
+        fontSize: 14.0,
+      );
+  String get bodySmallFamily => 'Plus Jakarta Sans';
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Plus Jakarta Sans',
+        color: theme.primaryText,
+        fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
 }
@@ -308,22 +556,22 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFFEE8B60);
-  late Color tertiary = const Color(0xFFFFFFFF);
-  late Color alternate = const Color(0xFF39D2C0);
+  late Color primary = const Color(0xFF4B986C);
+  late Color secondary = const Color(0xFF928163);
+  late Color tertiary = const Color(0xFF6D604A);
+  late Color alternate = const Color(0xFF17282E);
   late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF1A1F24);
-  late Color secondaryBackground = const Color(0xFF090F13);
-  late Color accent1 = const Color(0xFFEEEEEE);
-  late Color accent2 = const Color(0xFFE0E0E0);
-  late Color accent3 = const Color(0xFF757575);
-  late Color accent4 = const Color(0xFF616161);
-  late Color success = const Color(0xFF04A24C);
-  late Color warning = const Color(0xFFFCDC0C);
-  late Color error = const Color(0xFFE21C3D);
-  late Color info = const Color(0xFF1C4494);
+  late Color secondaryText = const Color(0xFF658593);
+  late Color primaryBackground = const Color(0xFF0B191E);
+  late Color secondaryBackground = const Color(0xFF0D1E23);
+  late Color accent1 = const Color(0x4D4B986C);
+  late Color accent2 = const Color(0x4D928163);
+  late Color accent3 = const Color(0x4C6D604A);
+  late Color accent4 = const Color(0xB20B191E);
+  late Color success = const Color(0xFF336A4A);
+  late Color warning = const Color(0xFFF3C344);
+  late Color error = const Color(0xFFC4454D);
+  late Color info = const Color(0xFFFFFFFF);
 
   late Color grayDark = Color(0xFF95A1AC);
   late Color dark900 = Color(0xFF1A1F24);

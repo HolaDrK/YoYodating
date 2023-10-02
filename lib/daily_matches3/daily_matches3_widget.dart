@@ -58,7 +58,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'ujrqw8ka' /* Daily Three */,
+            '0ht26ayg' /* Daily Three */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
@@ -154,7 +154,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'd1wq1lt3' /* Y */,
+                                'fl73mmig' /* Y */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -165,6 +165,10 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                         .secondaryText,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -219,7 +223,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'fnqiy9ok' /* E */,
+                                't5tyi6jc' /* E */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -230,6 +234,10 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                         .secondaryText,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -284,7 +292,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'clq2xsfy' /* S */,
+                                '6zm5t04d' /* S */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -295,6 +303,10 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                         .secondaryText,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -313,7 +325,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      '0so1dzz9' /* Choose Wisely  */,
+                      'lmvqp94f' /* Choose Wisely  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
@@ -321,17 +333,20 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '1q0sbop9' /* 10:00am */,
+                        'l1rtijln' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily: 'Lexend Deca',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
                             color: FlutterFlowTheme.of(context).primary,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
                     ),
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      '4nxumg04' /* Trying to figure out the flow ... */,
+                      'xqmu7mn0' /* Trying to figure out the flow ... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -344,7 +359,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'mblycjur' /* Matches delete daily */,
+                        'djmxtb88' /* Matches delete daily */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -361,7 +376,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     context.pushNamed('chatMain');
                   },
                   text: FFLocalizations.of(context).getText(
-                    '4uu7pp9i' /* Chat With Matchs Met */,
+                    'yb0mmm0f' /* Chat With Matchs Met */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
@@ -370,11 +385,15 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
-                    textStyle:
-                        FlutterFlowTheme.of(context).headlineSmall.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                            ),
+                    textStyle: FlutterFlowTheme.of(context)
+                        .headlineSmall
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                          color: Colors.white,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).headlineSmallFamily),
+                        ),
                     elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,

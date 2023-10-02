@@ -50,8 +50,10 @@ class _MyYYsWidgetState extends State<MyYYsWidget> {
             'xi36v6vo' /* My Team */,
           ),
           style: FlutterFlowTheme.of(context).displaySmall.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: FlutterFlowTheme.of(context).displaySmallFamily,
                 color: FlutterFlowTheme.of(context).tertiary,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).displaySmallFamily),
               ),
         ),
         actions: [
@@ -240,7 +242,9 @@ class _MyYYsWidgetState extends State<MyYYsWidget> {
                                                       .bodySmall
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -248,6 +252,12 @@ class _MyYYsWidgetState extends State<MyYYsWidget> {
                                                         fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallFamily),
                                                       ),
                                                 ),
                                               ),

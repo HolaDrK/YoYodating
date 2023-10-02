@@ -81,6 +81,8 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 20.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineSmallFamily),
                     ),
               ),
             ],
@@ -103,6 +105,8 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 14.0,
                         fontWeight: FontWeight.normal,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -138,6 +142,8 @@ class _EmptyListWidgetState extends State<EmptyListWidget> {
                     color: Colors.white,
                     fontSize: 16.0,
                     fontWeight: FontWeight.normal,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).titleSmallFamily),
                   ),
               elevation: 2.0,
               borderSide: BorderSide(

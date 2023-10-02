@@ -568,6 +568,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 3.0,
                 borderSide: BorderSide(

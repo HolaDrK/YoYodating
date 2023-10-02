@@ -86,13 +86,13 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'iqu1jg8v' /*       Connection Is Potential  */,
+                      'fhz3d2xu' /*       Connection Is Potential  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'krq611jn' /* Both Parties Agree To This Par... */,
+                      'v3q5250p' /* Both Parties Agree To This Par... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -100,11 +100,14 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'wo0te5d9' /* 10:00am */,
+                        'hmkhx3va' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                            fontFamily: 'Lexend Deca',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
                             color: FlutterFlowTheme.of(context).primary,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
                     ),
                   ),
@@ -112,7 +115,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'jkesztxj' /* May Suggested Activity Be In Y... */,
+                        'i6j3ahl8' /* May Suggested Activity Be In Y... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -134,7 +137,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     print('ButtonPrimary pressed ...');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'i1pyd9zo' /* Start Chatting */,
+                    'agtl0vfk' /* Start Chatting */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
@@ -143,11 +146,15 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
-                    textStyle:
-                        FlutterFlowTheme.of(context).headlineSmall.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                            ),
+                    textStyle: FlutterFlowTheme.of(context)
+                        .headlineSmall
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                          color: Colors.white,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).headlineSmallFamily),
+                        ),
                     elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,

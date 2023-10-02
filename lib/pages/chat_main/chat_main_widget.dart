@@ -93,8 +93,10 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
                 'q90exng5' /* All Chats */,
               ),
               style: FlutterFlowTheme.of(context).displaySmall.override(
-                    fontFamily: 'Lexend Deca',
+                    fontFamily: FlutterFlowTheme.of(context).displaySmallFamily,
                     color: FlutterFlowTheme.of(context).tertiary,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).displaySmallFamily),
                   ),
             ),
             actions: [],

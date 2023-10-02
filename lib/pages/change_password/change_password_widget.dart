@@ -95,6 +95,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         color: Color(0x98FFFFFF),
                         fontSize: 14.0,
                         fontWeight: FontWeight.normal,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -134,6 +136,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 14.0,
                       fontWeight: FontWeight.normal,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
                 keyboardType: TextInputType.emailAddress,
                 validator:
@@ -175,6 +179,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 3.0,
                   borderSide: BorderSide(

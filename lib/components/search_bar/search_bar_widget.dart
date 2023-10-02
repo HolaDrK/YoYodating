@@ -69,17 +69,24 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                     labelText: FFLocalizations.of(context).getText(
                       'xlppk2os' /* Search for friends... */,
                     ),
-                    labelStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Color(0xFF82878C),
-                            ),
+                    labelStyle: FlutterFlowTheme.of(context)
+                        .bodyMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          color: Color(0xFF82878C),
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                        ),
                     hintText: FFLocalizations.of(context).getText(
                       '02o299rf' /* Find your friend by na */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Lexend Deca',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: Color(0xFF95A1AC),
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -140,8 +147,11 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                         : null,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Lexend Deca',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         color: Color(0xFF151B1E),
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                   textAlign: TextAlign.start,
                   validator:

@@ -89,7 +89,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).success,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).success,
+              backgroundColor: Color(0xFF3391CF),
               automaticallyImplyLeading: false,
               leading: InkWell(
                 splashColor: Colors.transparent,
@@ -150,7 +150,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                       ),
                       Text(
                         FFLocalizations.of(context).getText(
-                          'tls39zxs' /*  Not For Me              For M... */,
+                          'rvp6t5n9' /*  Not For Me              For M... */,
                         ),
                         style: FlutterFlowTheme.of(context).headlineMedium,
                       ),
@@ -185,7 +185,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '9lareho0' /* Y */,
+                                  'y8mgvrpp' /* Y */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 60.0,
@@ -198,8 +198,13 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: Colors.white,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily),
                                       ),
                                   elevation: 3.0,
                                   borderSide: BorderSide(
@@ -294,7 +299,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                                   );
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'c8ozzxwy' /* Y */,
+                                  '89ixasc6' /* Y */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 60.0,
@@ -307,8 +312,13 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: Color(0xFF090101),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily),
                                       ),
                                   elevation: 3.0,
                                   borderSide: BorderSide(
