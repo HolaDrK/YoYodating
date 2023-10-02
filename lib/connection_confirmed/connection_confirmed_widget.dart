@@ -86,13 +86,13 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'krce2ple' /*       Connection Is Potential  */,
+                      '58weakwr' /*       Connection Is Potential  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'vtvm6wi5' /* Both Parties Agree To This Par... */,
+                      '5vjsqsie' /* Both Parties Agree To This Par... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -100,7 +100,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'r36gs0d7' /* 10:00am */,
+                        'sbl4ce1n' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -112,7 +112,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'ua8qtt0x' /* May Suggested Activity Be In Y... */,
+                        '5mdnilpg' /* May Suggested Activity Be In Y... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -130,9 +130,11 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                 child: FFButtonWidget(
-                  onPressed: () async {},
+                  onPressed: () {
+                    print('ButtonPrimary pressed ...');
+                  },
                   text: FFLocalizations.of(context).getText(
-                    '9p5fnb26' /* Start Chatting */,
+                    'ls5kjhwj' /* Start Chatting */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
