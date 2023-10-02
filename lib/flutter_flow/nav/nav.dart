@@ -156,6 +156,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             userPhoto: params.getParam(
                 'userPhoto', ParamType.DocumentReference, false, ['users']),
           ),
+        ),
+        FFRoute(
+          name: 'MatchDetails',
+          path: '/DailyTea',
+          builder: (context, params) => MatchDetailsWidget(),
+        ),
+        FFRoute(
+          name: 'DailyMatches3',
+          path: '/dailyMatches3',
+          builder: (context, params) => DailyMatches3Widget(),
+        ),
+        FFRoute(
+          name: 'MatchProfileFS',
+          path: '/matchProfileFS',
+          builder: (context, params) => MatchProfileFSWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

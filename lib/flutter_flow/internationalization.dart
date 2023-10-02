@@ -416,6 +416,117 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ja': '',
     },
   },
+  // MatchDetails
+  {
+    't8dkrhxv': {
+      'en': 'ZenDaily Reward Screen',
+      'es': '',
+      'ja': '',
+    },
+    'gn9su99h': {
+      'en': 'Humble Tea',
+      'es': '',
+      'ja': '',
+    },
+    'ghzxpptm': {
+      'en': '10:00am',
+      'es': '',
+      'ja': '',
+    },
+    'u4fbwq88': {
+      'en':
+          'Today is a good day to finish the basis of this app. Everyday your skill and knowledge base grows. The Pages that follow this do not matter yet, the concept is what is key. This page illustrates the daily reward located below with rotating calming picture above and a tracker below where insitity and other details are listed below. ',
+      'es': '',
+      'ja': '',
+    },
+    'i8jfdt5l': {
+      'en': 'Tea For You',
+      'es': '',
+      'ja': '',
+    },
+    'u0ptdv6t': {
+      'en': 'Days In A Row Tea Claimed For Current Month With Streak',
+      'es': '',
+      'ja': '',
+    },
+    'hsvztkb6': {
+      'en': 'Continue',
+      'es': '',
+      'ja': '',
+    },
+  },
+  // DailyMatches3
+  {
+    'eqe9g7lw': {
+      'en': 'Daily Three',
+      'es': '',
+      'ja': '',
+    },
+    'k49kroti': {
+      'en': 'Kye S',
+      'es': '',
+      'ja': '',
+    },
+    'a9vdxx21': {
+      'en': 'Kye S',
+      'es': '',
+      'ja': '',
+    },
+    'bvvw8ejb': {
+      'en': 'Kye S',
+      'es': '',
+      'ja': '',
+    },
+    'z9bp2yrh': {
+      'en': 'Choose Wisely ',
+      'es': '',
+      'ja': '',
+    },
+    'vztbv1fb': {
+      'en': '10:00am',
+      'es': '',
+      'ja': '',
+    },
+    'vr1hboqj': {
+      'en':
+          'Trying to figure out the flow for the best of 3 matches but this is  a beginning that even if it goes nowhere or moves to another service the concept is here the path forward is possible if not yet clear.',
+      'es': '',
+      'ja': '',
+    },
+    'ed67kpxx': {
+      'en': 'Matches delete daily',
+      'es': '',
+      'ja': '',
+    },
+    'octaf32p': {
+      'en': 'Choose',
+      'es': '',
+      'ja': '',
+    },
+  },
+  // MatchProfileFS
+  {
+    '5un82moc': {
+      'en': 'A Rose By Any Other Name ',
+      'es': '',
+      'ja': '',
+    },
+    'k5lwhkhd': {
+      'en': 'Not For Me                For Me Choose ',
+      'es': '',
+      'ja': '',
+    },
+    'r8u5fzjg': {
+      'en': 'O',
+      'es': '',
+      'ja': '',
+    },
+    '5unplvg5': {
+      'en': 'Y',
+      'es': '',
+      'ja': '',
+    },
+  },
   // SearchBar
   {
     'xlppk2os': {
