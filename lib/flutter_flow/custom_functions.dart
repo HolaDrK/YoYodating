@@ -15,3 +15,20 @@ import '/auth/firebase_auth/auth_util.dart';
 bool? hasNoChats(List<ChatsRecord>? allChats) {
   return allChats?.isEmpty ?? true;
 }
+
+List<String> newCustomFunction(
+  List<String>? match,
+  List<String>? rejected,
+) {
+  // combine list of match array and rejected array of users by uid and return a new list
+  List<String> matchArray = ['uid1', 'uid2', 'uid3'];
+  List<String> rejectedArray = ['uid2', 'uid4', 'uid5'];
+
+  List<String> combinedArray = [...matchArray, ...rejectedArray];
+
+  Set<String> uniqueUids = Set<String>.from(combinedArray);
+
+  List<String> finalArray = uniqueUids.toList();
+
+  return finalArray;
+}

@@ -86,13 +86,13 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'mq7bjbjv' /*       Connection Is Potential  */,
+                      'tk48qn96' /*       Connection Is Potential  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'd3nc2353' /* Both Parties Agree To This Par... */,
+                      'fry33amc' /* Both Parties Agree To This Par... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -100,7 +100,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'kd2k8lg2' /* 10:00am */,
+                        'wbg9x86g' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -112,7 +112,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'toke7bsu' /* May Suggested Activity Be In Y... */,
+                        'g7e2lf6z' /* May Suggested Activity Be In Y... */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -134,7 +134,7 @@ class _ConnectionConfirmedWidgetState extends State<ConnectionConfirmedWidget> {
                     print('ButtonPrimary pressed ...');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'q5qshy7m' /* Start Chatting */,
+                    '3uhoh2yh' /* Start Chatting */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
