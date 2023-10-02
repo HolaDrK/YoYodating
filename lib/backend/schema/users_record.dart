@@ -61,6 +61,31 @@ class UsersRecord extends FirestoreRecord {
   bool get isGuest => _isGuest ?? false;
   bool hasIsGuest() => _isGuest != null;
 
+  // "age" field.
+  String? _age;
+  String get age => _age ?? '';
+  bool hasAge() => _age != null;
+
+  // "gender" field.
+  String? _gender;
+  String get gender => _gender ?? '';
+  bool hasGender() => _gender != null;
+
+  // "desiredGender" field.
+  String? _desiredGender;
+  String get desiredGender => _desiredGender ?? '';
+  bool hasDesiredGender() => _desiredGender != null;
+
+  // "match" field.
+  List<String>? _match;
+  List<String> get match => _match ?? const [];
+  bool hasMatch() => _match != null;
+
+  // "rejected" field.
+  List<String>? _rejected;
+  List<String> get rejected => _rejected ?? const [];
+  bool hasRejected() => _rejected != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -71,6 +96,11 @@ class UsersRecord extends FirestoreRecord {
     _userRole = snapshotData['userRole'] as String?;
     _password = snapshotData['password'] as String?;
     _isGuest = snapshotData['isGuest'] as bool?;
+    _age = snapshotData['age'] as String?;
+    _gender = snapshotData['gender'] as String?;
+    _desiredGender = snapshotData['desiredGender'] as String?;
+    _match = getDataList(snapshotData['match']);
+    _rejected = getDataList(snapshotData['rejected']);
   }
 
   static CollectionReference get collection =>
@@ -116,6 +146,9 @@ Map<String, dynamic> createUsersRecordData({
   String? userRole,
   String? password,
   bool? isGuest,
+  String? age,
+  String? gender,
+  String? desiredGender,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -128,6 +161,9 @@ Map<String, dynamic> createUsersRecordData({
       'userRole': userRole,
       'password': password,
       'isGuest': isGuest,
+      'age': age,
+      'gender': gender,
+      'desiredGender': desiredGender,
     }.withoutNulls,
   );
 
@@ -139,6 +175,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
 
   @override
   bool equals(UsersRecord? e1, UsersRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
@@ -147,7 +184,12 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.userRole == e2?.userRole &&
         e1?.password == e2?.password &&
-        e1?.isGuest == e2?.isGuest;
+        e1?.isGuest == e2?.isGuest &&
+        e1?.age == e2?.age &&
+        e1?.gender == e2?.gender &&
+        e1?.desiredGender == e2?.desiredGender &&
+        listEquality.equals(e1?.match, e2?.match) &&
+        listEquality.equals(e1?.rejected, e2?.rejected);
   }
 
   @override
@@ -160,7 +202,12 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.phoneNumber,
         e?.userRole,
         e?.password,
-        e?.isGuest
+        e?.isGuest,
+        e?.age,
+        e?.gender,
+        e?.desiredGender,
+        e?.match,
+        e?.rejected
       ]);
 
   @override

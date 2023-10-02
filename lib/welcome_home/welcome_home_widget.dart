@@ -4,25 +4,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'match_details_model.dart';
-export 'match_details_model.dart';
+import 'welcome_home_model.dart';
+export 'welcome_home_model.dart';
 
-class MatchDetailsWidget extends StatefulWidget {
-  const MatchDetailsWidget({Key? key}) : super(key: key);
+class WelcomeHomeWidget extends StatefulWidget {
+  const WelcomeHomeWidget({Key? key}) : super(key: key);
 
   @override
-  _MatchDetailsWidgetState createState() => _MatchDetailsWidgetState();
+  _WelcomeHomeWidgetState createState() => _WelcomeHomeWidgetState();
 }
 
-class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
-  late MatchDetailsModel _model;
+class _WelcomeHomeWidgetState extends State<WelcomeHomeWidget> {
+  late WelcomeHomeModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MatchDetailsModel());
+    _model = createModel(context, () => WelcomeHomeModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -58,7 +58,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            't8dkrhxv' /* ZenDaily Reward Screen */,
+            'h3ipx7dv' /* ZenDaily Reward Screen */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
@@ -91,7 +91,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'gn9su99h' /* Humble Tea */,
+                      'ku4i6dpt' /* Humble Tea */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
@@ -99,7 +99,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'ghzxpptm' /* 10:00am */,
+                        'rex1eyz7' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -109,7 +109,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'u4fbwq88' /* Today is a good day to finish ... */,
+                      'n9y7jeh9' /* Today is a good day to finish ... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -170,7 +170,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'i8jfdt5l' /* Tea For You */,
+                                  'oywr1smq' /* Tea For You */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -196,7 +196,7 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'u0ptdv6t' /* Days In A Row Tea Claimed For ... */,
+                  'gvo5i28u' /* Days In A Row Tea Claimed For ... */,
                 ),
                 style: FlutterFlowTheme.of(context).labelMedium,
               ),
@@ -206,11 +206,11 @@ class _MatchDetailsWidgetState extends State<MatchDetailsWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('ButtonPrimary pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('DailyMatches3');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'hsvztkb6' /* Continue */,
+                    '4uc9k7jw' /* Continue */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,

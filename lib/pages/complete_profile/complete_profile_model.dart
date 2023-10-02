@@ -19,20 +19,37 @@ class CompleteProfileModel extends FlutterFlowModel<CompleteProfileWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
+  // State field(s) for yourAge widget.
+  TextEditingController? yourAgeController;
+  String? Function(BuildContext, String?)? yourAgeControllerValidator;
   // State field(s) for displayName widget.
   TextEditingController? displayNameController;
   String? Function(BuildContext, String?)? displayNameControllerValidator;
-  // State field(s) for yourTitle widget.
-  TextEditingController? yourTitleController;
-  String? Function(BuildContext, String?)? yourTitleControllerValidator;
+  // State field(s) for yourGender widget.
+  TextEditingController? yourGenderController;
+  String? Function(BuildContext, String?)? yourGenderControllerValidator;
+  // State field(s) for desiredGender widget.
+  TextEditingController? desiredGenderController;
+  String? Function(BuildContext, String?)? desiredGenderControllerValidator;
+  // State field(s) for yourLocation widget.
+  TextEditingController? yourLocationController;
+  String? Function(BuildContext, String?)? yourLocationControllerValidator;
+  // State field(s) for yourEverythingelse widget.
+  TextEditingController? yourEverythingelseController;
+  String? Function(BuildContext, String?)?
+      yourEverythingelseControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
+    yourAgeController?.dispose();
     displayNameController?.dispose();
-    yourTitleController?.dispose();
+    yourGenderController?.dispose();
+    desiredGenderController?.dispose();
+    yourLocationController?.dispose();
+    yourEverythingelseController?.dispose();
   }
 
   /// Action blocks are added here.

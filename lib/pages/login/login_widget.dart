@@ -1,9 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -251,7 +249,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       return;
                     }
 
-                    context.pushNamedAuth('chatMain', context.mounted);
+                    context.pushNamedAuth('WelcomeHome', context.mounted);
                   },
                   text: FFLocalizations.of(context).getText(
                     'avcf94ra' /* Log In */,
@@ -350,55 +348,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                       color: FlutterFlowTheme.of(context).dark900,
                       textStyle: FlutterFlowTheme.of(context).titleSmall,
                       elevation: 0.0,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      GoRouter.of(context).prepareAuthEvent();
-                      final user = await authManager.signInAnonymously(context);
-                      if (user == null) {
-                        return;
-                      }
-
-                      await currentUserReference!.update(createUsersRecordData(
-                        displayName: 'Friend',
-                        isGuest: true,
-                        userRole: 'Geek Master',
-                      ));
-
-                      context.pushNamedAuth(
-                        'chatMain',
-                        context.mounted,
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.bottomToTop,
-                            duration: Duration(milliseconds: 250),
-                          ),
-                        },
-                      );
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      'tbibomw3' /* Continue as Guest */,
-                    ),
-                    options: FFButtonOptions(
-                      width: 200.0,
-                      height: 55.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      textStyle: FlutterFlowTheme.of(context).titleSmall,
-                      elevation: 4.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 2.0,

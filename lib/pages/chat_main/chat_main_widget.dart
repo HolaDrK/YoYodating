@@ -67,7 +67,7 @@ class _ChatMainWidgetState extends State<ChatMainWidget> {
           floatingActionButton: FloatingActionButton(
             onPressed: () async {
               context.pushNamed(
-                'MyFriends',
+                'MyYYs',
                 extra: <String, dynamic>{
                   kTransitionInfoKey: TransitionInfo(
                     hasTransition: true,

@@ -13,19 +13,20 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'my_profile_model.dart';
-export 'my_profile_model.dart';
+import 'user_account_settings_model.dart';
+export 'user_account_settings_model.dart';
 
-class MyProfileWidget extends StatefulWidget {
-  const MyProfileWidget({Key? key}) : super(key: key);
+class UserAccountSettingsWidget extends StatefulWidget {
+  const UserAccountSettingsWidget({Key? key}) : super(key: key);
 
   @override
-  _MyProfileWidgetState createState() => _MyProfileWidgetState();
+  _UserAccountSettingsWidgetState createState() =>
+      _UserAccountSettingsWidgetState();
 }
 
-class _MyProfileWidgetState extends State<MyProfileWidget>
+class _UserAccountSettingsWidgetState extends State<UserAccountSettingsWidget>
     with TickerProviderStateMixin {
-  late MyProfileModel _model;
+  late UserAccountSettingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered1 = false;
@@ -62,7 +63,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MyProfileModel());
+    _model = createModel(context, () => UserAccountSettingsModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -103,7 +104,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
             ),
           );
         }
-        final myProfileUsersRecord = snapshot.data!;
+        final userAccountSettingsUsersRecord = snapshot.data!;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -228,7 +229,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                             }
                                           }
 
-                                          await myProfileUsersRecord.reference
+                                          await userAccountSettingsUsersRecord
+                                              .reference
                                               .update(createUsersRecordData(
                                             photoUrl: _model.uploadedFileUrl,
                                           ));
@@ -246,7 +248,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                             fadeOutDuration:
                                                 Duration(milliseconds: 500),
                                             imageUrl: valueOrDefault<String>(
-                                              myProfileUsersRecord.photoUrl,
+                                              userAccountSettingsUsersRecord
+                                                  .photoUrl,
                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/dark-mode-chat-xk2sj6/assets/ails754ngloi/uiAvatar@2x.png',
                                             ),
                                           ),
@@ -268,7 +271,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  myProfileUsersRecord.displayName,
+                                  userAccountSettingsUsersRecord.displayName,
                                   'Guest User',
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -290,7 +293,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  myProfileUsersRecord.userRole,
+                                  userAccountSettingsUsersRecord.userRole,
                                   'Guest',
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -309,7 +312,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
-                              myProfileUsersRecord.email,
+                              userAccountSettingsUsersRecord.email,
                               'No Email Associated with Account',
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -545,7 +548,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                   ],
                 ),
               ),
-              if (!myProfileUsersRecord.isGuest)
+              if (!userAccountSettingsUsersRecord.isGuest)
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -571,7 +574,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                     ),
                   ],
                 ),
-              if (!myProfileUsersRecord.isGuest)
+              if (!userAccountSettingsUsersRecord.isGuest)
                 Expanded(
                   child: ListView(
                     padding: EdgeInsets.zero,
@@ -611,21 +614,24 @@ class _MyProfileWidgetState extends State<MyProfileWidget>
                                       'editProfile',
                                       queryParameters: {
                                         'userEmail': serializeParam(
-                                          myProfileUsersRecord,
+                                          userAccountSettingsUsersRecord,
                                           ParamType.Document,
                                         ),
                                         'userDisplay': serializeParam(
-                                          myProfileUsersRecord,
+                                          userAccountSettingsUsersRecord,
                                           ParamType.Document,
                                         ),
                                         'userPhoto': serializeParam(
-                                          myProfileUsersRecord.reference,
+                                          userAccountSettingsUsersRecord
+                                              .reference,
                                           ParamType.DocumentReference,
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        'userEmail': myProfileUsersRecord,
-                                        'userDisplay': myProfileUsersRecord,
+                                        'userEmail':
+                                            userAccountSettingsUsersRecord,
+                                        'userDisplay':
+                                            userAccountSettingsUsersRecord,
                                       },
                                     );
                                   },

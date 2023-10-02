@@ -29,8 +29,12 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     super.initState();
     _model = createModel(context, () => CompleteProfileModel());
 
+    _model.yourAgeController ??= TextEditingController();
     _model.displayNameController ??= TextEditingController();
-    _model.yourTitleController ??= TextEditingController();
+    _model.yourGenderController ??= TextEditingController();
+    _model.desiredGenderController ??= TextEditingController();
+    _model.yourLocationController ??= TextEditingController();
+    _model.yourEverythingelseController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -147,6 +151,58 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
+              controller: _model.yourAgeController,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  '3mmdm6kz' /* Your age */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: FFLocalizations.of(context).getText(
+                  '1gbt8ujs' /* rude */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+              ),
+              style: FlutterFlowTheme.of(context).titleSmall,
+              keyboardType: TextInputType.emailAddress,
+              validator: _model.yourAgeControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            child: TextFormField(
               controller: _model.displayNameController,
               obscureText: false,
               decoration: InputDecoration(
@@ -155,7 +211,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 ),
                 labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                 hintText: FFLocalizations.of(context).getText(
-                  'eh4t3cqu' /* What name do you go by? */,
+                  'eh4t3cqu' /* What do you want to be called? */,
                 ),
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
@@ -200,15 +256,15 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: TextFormField(
-              controller: _model.yourTitleController,
+              controller: _model.yourGenderController,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
-                  'zgot294i' /* Your Title */,
+                  'zgot294i' /* Your Gender */,
                 ),
                 labelStyle: FlutterFlowTheme.of(context).bodyMedium,
                 hintText: FFLocalizations.of(context).getText(
-                  'hmrtfvre' /* What do you do? */,
+                  'hmrtfvre' /* insert chromosome here */,
                 ),
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                 enabledBorder: OutlineInputBorder(
@@ -247,7 +303,166 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
               style: FlutterFlowTheme.of(context).titleSmall,
               keyboardType: TextInputType.emailAddress,
               validator:
-                  _model.yourTitleControllerValidator.asValidator(context),
+                  _model.yourGenderControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            child: TextFormField(
+              controller: _model.desiredGenderController,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  'owjtt20v' /* desiredGender */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: FFLocalizations.of(context).getText(
+                  'j3wjbgit' /* insert desired chromosomes her... */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+              ),
+              style: FlutterFlowTheme.of(context).titleSmall,
+              keyboardType: TextInputType.emailAddress,
+              validator:
+                  _model.desiredGenderControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            child: TextFormField(
+              controller: _model.yourLocationController,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  '6op22kfk' /* Your location */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: FFLocalizations.of(context).getText(
+                  'oudwgkpc' /* where in the world am I today? */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+              ),
+              style: FlutterFlowTheme.of(context).titleSmall,
+              keyboardType: TextInputType.emailAddress,
+              validator:
+                  _model.yourLocationControllerValidator.asValidator(context),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            child: TextFormField(
+              controller: _model.yourEverythingelseController,
+              obscureText: false,
+              decoration: InputDecoration(
+                labelText: FFLocalizations.of(context).getText(
+                  '7wiq0wxp' /* Your EverythingElseEnteredSoon */,
+                ),
+                labelStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: FFLocalizations.of(context).getText(
+                  '61gli6x7' /* The questionare is big bro thi... */,
+                ),
+                hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x00000000),
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                filled: true,
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 20.0, 24.0),
+              ),
+              style: FlutterFlowTheme.of(context).titleSmall,
+              keyboardType: TextInputType.emailAddress,
+              validator: _model.yourEverythingelseControllerValidator
+                  .asValidator(context),
             ),
           ),
           Padding(
@@ -257,11 +472,19 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                 await currentUserReference!.update(createUsersRecordData(
                   photoUrl: _model.uploadedFileUrl,
                   displayName: _model.displayNameController.text,
-                  userRole: _model.yourTitleController.text,
+                  userRole: _model.yourGenderController.text,
                   createdTime: getCurrentTimestamp,
+                  email: '',
+                  uid: '',
+                  phoneNumber: '',
+                  password: '',
+                  isGuest: false,
+                  age: '',
+                  gender: '',
+                  desiredGender: '',
                 ));
 
-                context.pushNamed('chatMain');
+                context.pushNamed('WelcomeHome');
               },
               text: FFLocalizations.of(context).getText(
                 '1h9yc7n3' /* Save Profile */,

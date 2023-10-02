@@ -98,9 +98,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
-          name: 'MyFriends',
-          path: '/myFriends',
-          builder: (context, params) => MyFriendsWidget(),
+          name: 'MyYYs',
+          path: '/myYYs',
+          builder: (context, params) => MyYYsWidget(),
         ),
         FFRoute(
           name: 'completeProfile',
@@ -137,11 +137,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ChangePasswordWidget(),
         ),
         FFRoute(
-          name: 'myProfile',
-          path: '/myProfile',
+          name: 'userAccountSettings',
+          path: '/userAccountSettings',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'myProfile')
-              : MyProfileWidget(),
+              ? NavBarPage(initialPage: 'userAccountSettings')
+              : UserAccountSettingsWidget(),
         ),
         FFRoute(
           name: 'editProfile',
@@ -158,9 +158,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'MatchDetails',
+          name: 'WelcomeHome',
           path: '/DailyTea',
-          builder: (context, params) => MatchDetailsWidget(),
+          builder: (context, params) => WelcomeHomeWidget(),
         ),
         FFRoute(
           name: 'DailyMatches3',

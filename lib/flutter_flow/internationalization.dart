@@ -148,11 +148,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
       'ja': '',
     },
-    'tbibomw3': {
-      'en': 'Continue as Guest',
-      'es': '',
-      'ja': '',
-    },
     'dashuu8j': {
       'en': 'Home',
       'es': '',
@@ -217,7 +212,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ja': '',
     },
   },
-  // MyFriends
+  // MyYYs
   {
     'xi36v6vo': {
       'en': 'My Team',
@@ -237,23 +232,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
       'ja': '',
     },
+    '3mmdm6kz': {
+      'en': 'Your age',
+      'es': '',
+      'ja': '',
+    },
+    '1gbt8ujs': {
+      'en': 'rude',
+      'es': '',
+      'ja': '',
+    },
     'wnzz7l6c': {
       'en': 'Your Name',
       'es': '',
       'ja': '',
     },
     'eh4t3cqu': {
-      'en': 'What name do you go by?',
+      'en': 'What do you want to be called?',
       'es': '',
       'ja': '',
     },
     'zgot294i': {
-      'en': 'Your Title',
+      'en': 'Your Gender',
       'es': '',
       'ja': '',
     },
     'hmrtfvre': {
-      'en': 'What do you do?',
+      'en': 'insert chromosome here',
+      'es': '',
+      'ja': '',
+    },
+    'owjtt20v': {
+      'en': 'desiredGender',
+      'es': '',
+      'ja': '',
+    },
+    'j3wjbgit': {
+      'en': 'insert desired chromosomes here',
+      'es': '',
+      'ja': '',
+    },
+    '6op22kfk': {
+      'en': 'Your location',
+      'es': '',
+      'ja': '',
+    },
+    'oudwgkpc': {
+      'en': 'where in the world am I today?',
+      'es': '',
+      'ja': '',
+    },
+    '7wiq0wxp': {
+      'en': 'Your EverythingElseEnteredSoon',
+      'es': '',
+      'ja': '',
+    },
+    '61gli6x7': {
+      'en': 'The questionare is big bro this is beginning :)',
       'es': '',
       'ja': '',
     },
@@ -350,7 +385,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ja': '',
     },
   },
-  // myProfile
+  // userAccountSettings
   {
     'zd8uvtjp': {
       'en': 'Switch to Dark Mode',
@@ -416,40 +451,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ja': '',
     },
   },
-  // MatchDetails
+  // WelcomeHome
   {
-    't8dkrhxv': {
+    'h3ipx7dv': {
       'en': 'ZenDaily Reward Screen',
       'es': '',
       'ja': '',
     },
-    'gn9su99h': {
+    'ku4i6dpt': {
       'en': 'Humble Tea',
       'es': '',
       'ja': '',
     },
-    'ghzxpptm': {
+    'rex1eyz7': {
       'en': '10:00am',
       'es': '',
       'ja': '',
     },
-    'u4fbwq88': {
+    'n9y7jeh9': {
       'en':
           'Today is a good day to finish the basis of this app. Everyday your skill and knowledge base grows. The Pages that follow this do not matter yet, the concept is what is key. This page illustrates the daily reward located below with rotating calming picture above and a tracker below where insitity and other details are listed below. ',
       'es': '',
       'ja': '',
     },
-    'i8jfdt5l': {
+    'oywr1smq': {
       'en': 'Tea For You',
       'es': '',
       'ja': '',
     },
-    'u0ptdv6t': {
+    'gvo5i28u': {
       'en': 'Days In A Row Tea Claimed For Current Month With Streak',
       'es': '',
       'ja': '',
     },
-    'hsvztkb6': {
+    '4uc9k7jw': {
       'en': 'Continue',
       'es': '',
       'ja': '',
@@ -457,71 +492,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // DailyMatches3
   {
-    'eqe9g7lw': {
+    'm1lw1017': {
       'en': 'Daily Three',
       'es': '',
       'ja': '',
     },
-    'k49kroti': {
-      'en': 'Kye S',
+    '96layry5': {
+      'en': 'Y',
       'es': '',
       'ja': '',
     },
-    'a9vdxx21': {
-      'en': 'Kye S',
+    '7ja6gl4i': {
+      'en': 'E',
       'es': '',
       'ja': '',
     },
-    'bvvw8ejb': {
-      'en': 'Kye S',
+    '8kdtm1iu': {
+      'en': 'S',
       'es': '',
       'ja': '',
     },
-    'z9bp2yrh': {
+    't1vdy15p': {
       'en': 'Choose Wisely ',
       'es': '',
       'ja': '',
     },
-    'vztbv1fb': {
+    '2fw6ebmj': {
       'en': '10:00am',
       'es': '',
       'ja': '',
     },
-    'vr1hboqj': {
+    'wf04d6pq': {
       'en':
           'Trying to figure out the flow for the best of 3 matches but this is  a beginning that even if it goes nowhere or moves to another service the concept is here the path forward is possible if not yet clear.',
       'es': '',
       'ja': '',
     },
-    'ed67kpxx': {
+    'a9xsr8ho': {
       'en': 'Matches delete daily',
       'es': '',
       'ja': '',
     },
-    'octaf32p': {
-      'en': 'Choose',
+    'ix3enfw6': {
+      'en': 'Chat With Matchs Met',
       'es': '',
       'ja': '',
     },
   },
   // MatchProfileFS
   {
-    '5un82moc': {
+    'z4eknyjn': {
       'en': 'A Rose By Any Other Name ',
       'es': '',
       'ja': '',
     },
-    'k5lwhkhd': {
+    'u8mn5gd7': {
       'en': 'Not For Me                For Me Choose ',
       'es': '',
       'ja': '',
     },
-    'r8u5fzjg': {
-      'en': 'O',
+    '5czvpgpi': {
+      'en': 'Y',
       'es': '',
       'ja': '',
     },
-    '5unplvg5': {
+    '9ep0vo0a': {
       'en': 'Y',
       'es': '',
       'ja': '',

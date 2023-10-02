@@ -82,7 +82,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    '5un82moc' /* A Rose By Any Other Name  */,
+                    'z4eknyjn' /* A Rose By Any Other Name  */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium,
                 ),
@@ -108,7 +108,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'k5lwhkhd' /* Not For Me                For ... */,
+                    'u8mn5gd7' /* Not For Me                For ... */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium,
                 ),
@@ -125,7 +125,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                             print('ButtonPrimary pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'r8u5fzjg' /* O */,
+                            '5czvpgpi' /* Y */,
                           ),
                           options: FFButtonOptions(
                             width: 60.0,
@@ -178,7 +178,7 @@ class _MatchProfileFSWidgetState extends State<MatchProfileFSWidget> {
                             print('ButtonPrimary pressed ...');
                           },
                           text: FFLocalizations.of(context).getText(
-                            '5unplvg5' /* Y */,
+                            '9ep0vo0a' /* Y */,
                           ),
                           options: FFButtonOptions(
                             width: 60.0,

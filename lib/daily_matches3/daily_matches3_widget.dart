@@ -58,7 +58,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'eqe9g7lw' /* Daily Three */,
+            'm1lw1017' /* Daily Three */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
@@ -84,7 +84,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 8.0, 0.0, 12.0),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -92,7 +92,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                          EdgeInsetsDirectional.fromSTEB(44.0, 12.0, 0.0, 12.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -106,30 +106,43 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                             verticalDirection: VerticalDirection.down,
                             clipBehavior: Clip.none,
                             children: [
-                              Container(
-                                width: 64.0,
-                                height: 64.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).accent1,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      4.0, 4.0, 4.0, 4.0),
-                                  child: Container(
-                                    width: 70.0,
-                                    height: 70.0,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
+                              Align(
+                                alignment: AlignmentDirectional(1.00, 1.00),
+                                child: Container(
+                                  width: 64.0,
+                                  height: 64.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 2.0,
                                     ),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1517841905240-472988babdf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                      fit: BoxFit.cover,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        4.0, 4.0, 4.0, 4.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed('MatchProfileFS');
+                                      },
+                                      child: Container(
+                                        width: 70.0,
+                                        height: 70.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          'https://images.unsplash.com/photo-1517841905240-472988babdf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -141,7 +154,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'k49kroti' /* Kye S */,
+                                '96layry5' /* Y */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -160,7 +173,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                          EdgeInsetsDirectional.fromSTEB(44.0, 12.0, 0.0, 12.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -178,16 +191,25 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 4.0, 4.0),
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                  fit: BoxFit.cover,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('MatchProfileFS');
+                                },
+                                child: Container(
+                                  width: 70.0,
+                                  height: 70.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.network(
+                                    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -197,7 +219,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'a9vdxx21' /* Kye S */,
+                                '7ja6gl4i' /* E */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -216,7 +238,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 12.0),
+                          EdgeInsetsDirectional.fromSTEB(44.0, 12.0, 0.0, 12.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -234,16 +256,25 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 4.0, 4.0),
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                  fit: BoxFit.cover,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('MatchProfileFS');
+                                },
+                                child: Container(
+                                  width: 70.0,
+                                  height: 70.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.network(
+                                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxwZW9wbGV8ZW58MHx8fHwxNjk2MTY3MTE5fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -253,7 +284,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                                 0.0, 8.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'bvvw8ejb' /* Kye S */,
+                                '8kdtm1iu' /* S */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -282,7 +313,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      'z9bp2yrh' /* Choose Wisely  */,
+                      't1vdy15p' /* Choose Wisely  */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
@@ -290,7 +321,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'vztbv1fb' /* 10:00am */,
+                        '2fw6ebmj' /* 10:00am */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lexend Deca',
@@ -300,7 +331,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      'vr1hboqj' /* Trying to figure out the flow ... */,
+                      'wf04d6pq' /* Trying to figure out the flow ... */,
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge,
                   ),
@@ -313,7 +344,7 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'ed67kpxx' /* Matches delete daily */,
+                        'a9xsr8ho' /* Matches delete daily */,
                       ),
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
@@ -326,11 +357,11 @@ class _DailyMatches3WidgetState extends State<DailyMatches3Widget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 24.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('ButtonPrimary pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('chatMain');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'octaf32p' /* Choose */,
+                    'ix3enfw6' /* Chat With Matchs Met */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
